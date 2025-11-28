@@ -33,6 +33,33 @@ When you're ready, run:
 npm run reset-project
 ```
 
+## Cleaning local Expo state (optional but recommended)
+
+Expo stores local state and history under the `.expo` folder which should not be tracked by Git.
+
+Before pushing or creating PRs, run the following to untrack and remove any local `.expo` state:
+
+```bash
+# If `.expo` is already tracked by git, untrack it and remove it locally
+git rm -r --cached .expo || true
+rm -rf .expo || true
+git commit -m "chore: remove local .expo and add to .gitignore" || true
+```
+
+You can also use the helper script in `scripts/remove_expo_from_git.sh`.
+
+### Generating a square app icon
+
+If your `app.json` references a non-square image for `icon` or the Adaptive Icon foreground image, use the helper script to auto-generate a squared icon and update `app.json`:
+
+```bash
+npm install --save-dev jimp # only required the first time
+npm run fix-icon
+```
+
+This will crop the configured `icon` to a square and save it as `assets/images/icon-square.png`, then update `app.json` to point to that file.
+
+
 This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
 ## Learn more

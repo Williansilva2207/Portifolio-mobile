@@ -9,6 +9,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint"
+    ,"fix-icon": "node ./scripts/fix-icon.js"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -43,7 +44,8 @@
     "@types/react": "~19.1.0",
     "typescript": "~5.9.2",
     "eslint": "^9.25.0",
-    "eslint-config-expo": "~10.0.0"
+    "eslint-config-expo": "~10.0.0",
+    "jimp": "^0.22.10"
   },
   "private": true
 }
