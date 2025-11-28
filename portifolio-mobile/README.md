@@ -57,6 +57,17 @@ npm install --save-dev jimp # only required the first time
 npm run fix-icon
 ```
 
+### Otimizar imagens para builds (reduz tempo de carregamento inicial)
+
+Para reduzir o tamanho do bundle e acelerar o carregamento inicial em builds, gere versões otimizadas das imagens com este comando:
+
+```bash
+npm run optimize-images
+```
+
+O script gera imagens em `assets/images/optimized` e o app está preparado para usar essas versões quando presentes.
+
+
 This will crop the configured `icon` to a square and save it as `assets/images/icon-square.png`, then update `app.json` to point to that file.
 
 

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import { Cabecalho } from '../components/Cabecalho';
 import { Apresentation } from '../components/Apresentation';
@@ -8,6 +8,7 @@ import { Rodape } from '../components/Rodape';
 import Forca from './Forca/Forca';
 
 export default function App() {
+	const start = Date.now();
 	const [route, setRoute] = useState<'home' | 'forca'>('home');
 
 	const scrollRef = useRef<ScrollView | null>(null);
@@ -28,6 +29,10 @@ export default function App() {
 	};
 
 	const openForca = () => setRoute('forca');
+
+	useEffect(() => {
+		console.log('Rendered App in', Date.now() - start, 'ms');
+	}, []);
 
 	return (
 		<SafeAreaView style={styles.safe}>

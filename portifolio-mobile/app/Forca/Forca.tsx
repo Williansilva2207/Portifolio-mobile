@@ -22,16 +22,33 @@ const wordsList = [
   'Gom Jabbar','Água da Vida','Choam'
 ];
 
-const imagens = [
-  require('../../assets/images/Shai Hulud 1.png'),
-  require('../../assets/images/Shai Hulud 2.png'),
-  require('../../assets/images/Shai Hulud 3.png'),
-  require('../../assets/images/Shai Hulud 4.png'),
-  require('../../assets/images/Shai Hulud 5.png'),
-  require('../../assets/images/Shai Hulud 6_1.png'),
-  require('../../assets/images/Shai Hulud 7.png'),
-  require('../../assets/images/Shai Hulud and Fremen.png'),
-];
+let imagens: any[] = [];
+(() => {
+  try {
+    imagens = [
+      require('../../assets/images/optimized/Shai Hulud 1.webp'),
+      require('../../assets/images/optimized/Shai Hulud 2.webp'),
+      require('../../assets/images/optimized/Shai Hulud 3.webp'),
+      require('../../assets/images/optimized/Shai Hulud 4.webp'),
+      require('../../assets/images/optimized/Shai Hulud 5.webp'),
+      require('../../assets/images/optimized/Shai Hulud 6_1.webp'),
+      require('../../assets/images/optimized/Shai Hulud 7.webp'),
+      require('../../assets/images/optimized/Shai Hulud and Fremen.webp'),
+    ];
+  } catch (e) {
+    // Fallback para as versões originais caso não existam as otimizadas
+    imagens = [
+      require('../../assets/images/Shai Hulud 1.png'),
+      require('../../assets/images/Shai Hulud 2.png'),
+      require('../../assets/images/Shai Hulud 3.png'),
+      require('../../assets/images/Shai Hulud 4.png'),
+      require('../../assets/images/Shai Hulud 5.png'),
+      require('../../assets/images/Shai Hulud 6_1.png'),
+      require('../../assets/images/Shai Hulud 7.png'),
+      require('../../assets/images/Shai Hulud and Fremen.png'),
+    ];
+  }
+})();
 
 export default function Forca() {
   const [word, setWord] = useState('');

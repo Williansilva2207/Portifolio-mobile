@@ -51,6 +51,14 @@ export function Projects({ onOpenForca }: Props) {
 		if (supported) await Linking.openURL(url);
 	};
 
+	// Tenta usar versões otimizadas (webp) quando disponíveis — só para reduzir peso do bundle
+	let DSOptimized: any | null = null;
+	let CodeOptimized: any | null = null;
+	let PaulOptimized: any | null = null;
+	try { DSOptimized = require('../assets/images/optimized/DS.webp'); } catch (e) {}
+	try { CodeOptimized = require('../assets/images/optimized/code.webp'); } catch (e) {}
+	try { PaulOptimized = require('../assets/images/optimized/paul.webp'); } catch (e) {}
+
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>Projetos</Text>
@@ -72,10 +80,10 @@ export function Projects({ onOpenForca }: Props) {
 						<Image
 							source={
 								p.title.includes('Deadpool')
-									? require('../assets/images/DS.png')
+									? (DSOptimized ?? require('../assets/images/DS.png'))
 									: p.title.includes('Redução')
-									? require('../assets/images/code.png')
-									: require('../assets/images/paul.png')
+									? (CodeOptimized ?? require('../assets/images/code.png'))
+									: (PaulOptimized ?? require('../assets/images/paul.png'))
 							}
 							style={styles.cardImage}
 						/>

@@ -7,27 +7,24 @@
     "scheme": "portifoliomobile",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-
     "ios": {
       "supportsTablet": true
     },
-
     "android": {
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "package": "com.williansilva2207.portifoliomobile"
     },
-
     "web": {
       "output": "static"
     },
-
+    "icon": "./assets/images/icon-square.png",
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/DS.png",
+          "image": "./assets/images/optimized/DS.webp",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff",
@@ -37,23 +34,19 @@
         }
       ]
     ],
-
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
     },
-
     "extra": {
       "router": {},
       "eas": {
         "projectId": "aec15152-9413-4aee-9058-c291db92323c"
       }
     },
-
     "runtimeVersion": {
       "policy": "appVersion"
     },
-
     "updates": {
       "url": "https://u.expo.dev/aec15152-9413-4aee-9058-c291db92323c"
     }

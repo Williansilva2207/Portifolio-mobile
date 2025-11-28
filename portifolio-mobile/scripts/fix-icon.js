@@ -37,16 +37,21 @@ async function run() {
   const width = image.getWidth();
   const height = image.getHeight();
   console.log('Current icon size:', width, 'x', height);
-  if (width === height) {
-    console.log('Icon is already square — nothing to do');
-    return;
-  }
 
-  // Crop the center to square using the min side
+  // Crop the center to square using the min side and resize to 1024px for smaller icon file
   const size = Math.min(width, height);
   const x = Math.floor((width - size) / 2);
   const y = Math.floor((height - size) / 2);
-  const newImg = image.crop(x, y, size, size);
+    // Crop if not square
+    let newImg = image;
+    if (width !== height) {
+      const size = Math.min(width, height);
+      const x = Math.floor((width - size) / 2);
+      const y = Math.floor((height - size) / 2);
+      newImg = image.crop(x, y, size, size);
+    }
+    // Always resize to 512x512 to reduce final icon file size (good for mobile)
+    newImg.resize(512, 512);
 
   // Ensure output dir exists
   const outDir = path.join(projectRoot, 'assets', 'images');
