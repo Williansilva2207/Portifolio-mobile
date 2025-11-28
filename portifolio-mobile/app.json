@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/will.jpg",
+        "foregroundImage": "./assets/images/willcopy.png",
         "backgroundColor": "#E6F4FE"
       },
       "edgeToEdgeEnabled": true,
