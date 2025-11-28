@@ -4,7 +4,7 @@
     "slug": "portifolio-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/will.jpg",
+    "icon": "./assets/images/willcopy.png",
     "scheme": "portifoliomobile",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
