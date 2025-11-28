@@ -8,8 +8,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
-    ,"fix-icon": "node ./scripts/fix-icon.js"
+    "lint": "expo lint",
+    "fix-icon": "node ./scripts/fix-icon.js"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
